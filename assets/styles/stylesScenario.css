@@ -85,7 +85,7 @@ a {
 }
 
 .language {
-  display: flex;
+  display: none;
   align-items: center;
   font-size: 16px;
 }
