@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: "Helvetica Now Display", Arial, sans-serif;
@@ -108,4 +112,5 @@ header {
   color: #000;
   margin: 0;
   line-height: 1.5;
+  padding: 5px 20px 10px 20px;
 }
