@@ -30,7 +30,7 @@ header {
 }
 
 .language-switcher {
-  display: flex;
+  display: none;
   align-items: center;
   font-size: 16px;
 }
