@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0 20px 0;
   background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
   position: absolute;
   top: 0;
@@ -27,6 +27,7 @@ header {
 
 .logo img {
   height: 40px;
+  margin-left: 20px;
 }
 
 .language-switcher {
