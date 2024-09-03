@@ -52,7 +52,7 @@ a {
 
 .return-button {
   background-color: white;
-  color: #007eb5;
+  color: black;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
@@ -72,11 +72,12 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
 }
 
 .icon-button img {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .timer {
@@ -103,26 +104,70 @@ main {
 }
 
 .info-panel {
-  flex: 1;
   padding: 20px;
   background-color: #f0f0f0;
   color: black;
   border-radius: 10px;
+  width: 400px;
+  height: 800px;
 }
 
 .info-panel ul {
-  list-style-type: none;
+  list-style-type: none; /* Supprimer les puces par défaut */
   padding: 0;
+  margin: 0;
+  font-family: "Helvetica Now Display", Arial, sans-serif;
+  font-size: 16px; /* Ajuster la taille de la police */
+  color: #333; /* Couleur du texte */
+  line-height: 1.6; /* Espacement entre les lignes */
 }
 
-.info-panel li {
+ul > li {
   margin-bottom: 10px;
-  font-size: 16px;
+  display: flex;
+  align-items: flex-start; /* Pour aligner le texte avec l'icône */
 }
 
-.info-panel .highlight {
-  color: #007eb5;
-  font-weight: bold;
+ul > li::before {
+  content: "•"; /* Ajouter la puce personnalisée */
+  color: #007eb5; /* Couleur de la puce */
+  font-size: 20px; /* Taille de la puce */
+  margin-right: 10px; /* Espacement entre la puce et le texte */
+  line-height: 1; /* Ajuster la hauteur de ligne de la puce */
+}
+
+ul ul {
+  margin-left: 30px; /* Indentation pour les sous-listes */
+}
+
+ul ul > li {
+  display: flex;
+  align-items: flex-start; /* Aligner l'icône chevron avec le texte */
+  position: relative;
+  margin-bottom: 10px; /* Ajout d'un espacement entre les éléments de la sous-liste */
+}
+
+ul ul > li::before {
+  content: "›"; /* Chevron pour les sous-points */
+  color: #333; /* Couleur du chevron */
+  font-size: 20px; /* Taille du chevron */
+  margin-right: 10px; /* Espacement entre le chevron et le texte */
+  line-height: 1; /* Ajuster la hauteur de ligne de la puce */
+  margin-top: 3px; /* Ajuster la position verticale du chevron */
+}
+
+ul ul > li > span.highlight {
+  margin-left: 5px; /* Légèrement éloigné du texte pour réduire l'espace */
+}
+
+.highlight {
+  color: #007eb5; /* Couleur pour le texte mis en évidence */
+  font-weight: bold; /* Texte en gras pour la mise en évidence */
+  text-decoration: none; /* Enlever le soulignement si c'est un lien */
+}
+
+ul ul li span.material-symbols-outlined {
+  margin-right: 5px; /* Réduire l'espacement entre le chevron et le texte */
 }
 
 .content-placeholder {

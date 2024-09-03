@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicomatic Mission</title>
     <link rel="stylesheet" href="./assets/styles/stylesScenario.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <script>
+      function displayScenarioText() {
+        const params = new URLSearchParams(window.location.search);
+        const scenario = params.get("scenario");
+
+        let content = "";
+        if (scenario === "1") {
+          content = `
+              <ul>
+                <li>Boîtier Cockpit panel au format 2U</li>
+                <ul>
+                  <li>
+                    1 fonction avec un sélecteur rotatif pour régler la vitesse de
+                    ventilation <span class="highlight">cabine</span> - 5 vitesses + position OFF
+                  </li>
+                  <li>
+                    1 fonction avec un sélecteur rotatif pour régler la vitesse de
+                    ventilation <span class="highlight">cockpit</span> - 5 vitesses + position OFF
+                  </li>
+                  <li>
+                    1 fonction avec un sélecteur rotatif pour sélectionner la source
+                    de l’air conditionné - 5 vitesses + position OFF
+                  </li>
+                  <li>
+                    1 bouton poussoir bistable pour ouvrir ou fermer les clapets avec
+                    retour lumineux intégré
+                  </li>
+                </ul>
+                <li>Cartes électroniques internes au boîtier gérant les fonctions</li>
+                <li>Harnais à base de connecteurs XX points pour relier la face avant à
+                  l’électronique interne</li>
+                <li>Connecteur d’interface client de XX broches ML38999</li>
+              </ul>`;
+        } else if (scenario === "2") {
+          content = "<p>Texte spécifique pour le Scénario 2.</p>";
+        } else if (scenario === "3") {
+          content = "<p>Texte spécifique pour le Scénario 3.</p>";
+        } else {
+          content = "<p>Aucun scénario sélectionné.</p>";
+        }
+
+        document.getElementById("scenario-content").innerHTML = content;
+      }
+
+      window.onload = displayScenarioText;
+    </script>
   </head>
   <body>
     <header>
@@ -26,50 +76,24 @@
         embarqué pour gérer l’air conditionné
       </div>
       <div class="right-icons">
-        <a href="page-scenarios.html" class="return-button">
-          &#8592; Retour aux scénarios
+        <a href="index.html" class="return-button">
+          <span class="material-symbols-outlined"> arrow_back_ios </span> Retour
+          aux scénarios
         </a>
         <button class="icon-button">
-          <img src="./assets/img/icon-plane.png" alt="Plane Icon" />
+          <img
+            src="./assets/img/ph_navigation-arrow-light.png"
+            alt="Plane Icon"
+          />
         </button>
         <button class="icon-button">
-          <img src="./assets/img/icon-help.png" alt="Help Icon" />
+          <img src="./assets/img/clarity_help-line.png" alt="Help Icon" />
         </button>
       </div>
     </div>
 
     <main>
-      <div class="info-panel">
-        <ul>
-          <li>Boîtier Cockpit panel au format 2U</li>
-          <ul>
-            <li>
-              1 fonction avec un sélecteur rotatif pour régler la vitesse de
-              ventilation
-              <span class="highlight">cabine</span> - 5 vitesses + position OFF
-            </li>
-            <li>
-              1 fonction avec un sélecteur rotatif pour régler la vitesse de
-              ventilation
-              <span class="highlight">cockpit</span> - 5 vitesses + position OFF
-            </li>
-            <li>
-              1 fonction avec un sélecteur rotatif pour sélectionner la source
-              de l’air conditionné - 5 vitesses + position OFF
-            </li>
-            <li>
-              1 bouton poussoir bistable pour ouvrir ou fermer les clapets avec
-              retour lumineux intégré
-            </li>
-          </ul>
-          <li>Cartes électroniques internes au boîtier gérant les fonctions</li>
-          <li>
-            Harnais à base de connecteurs XX points pour relier la face avant à
-            l’électronique interne
-          </li>
-          <li>Connecteur d’interface client de XX broches ML38999</li>
-        </ul>
-      </div>
+      <div id="scenario-content" class="info-panel"></div>
       <div class="content-placeholder">
         <!-- Espace réservé pour votre contenu -->
         <img src="./assets/img/placeholder-image.jpg" alt="Placeholder" />
