@@ -36,7 +36,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .mission-title {
@@ -260,8 +260,12 @@ ul ul li span.material-symbols-outlined {
   z-index: 1000;
   box-sizing: border-box;
   height: 62px;
-  visibility: hidden; /* Initially hidden */
+  /* visibility: hidden;  */
   transition: background-color 0.5s, visibility 0.5s;
+}
+
+.banner span {
+  visibility: hidden;
 }
 
 .banner .timer {
